@@ -30,7 +30,7 @@ def create_category():
     fake = Faker()
     for x in sub_categories.keys():
         name = x
-        print(name)
+        # print(name)
         Category.objects.create(spanish=name,
         english=name,
         portuguese=name,
@@ -99,8 +99,6 @@ def create_retailer(N):
         updated = timezone.now(),
         )
 
-
-
 def create_product(N):
     fake = Faker()
     all_hitchModel = HitchModel.objects.all()
@@ -120,7 +118,6 @@ def create_product(N):
         # print('{}-{}-{}'.format(country,retailer,hitch_model))
         )
 
-
 def create_history(N):
     fake = Faker()
     all_products = Product.objects.all()
@@ -132,12 +129,11 @@ def create_history(N):
             updated = timezone.now(),
         )
 
-
-# create_category()
-# create_subcategory()
-# create_hitchModel(9)
-# create_countries(17)
-# create_retailer(9)
-# create_product(9)
+create_category()
+create_subcategory()
+create_hitchModel(9)
+create_countries(17)
+create_retailer(9)
+create_product(9)
 create_history(20)
 print('Terminado!!!!!!!!!!!')

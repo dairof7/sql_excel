@@ -3,11 +3,6 @@ from app.models.users import User
 from app.models.product import Product
 
 class Favorite(models.Model):
-    report_list = (
-        ('0','Price Zero'),
-        ('1','Not Found'),
-        ('2','other'),
-    )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     is_favorite = models.BooleanField('Favorite', default=True)

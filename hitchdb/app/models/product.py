@@ -7,9 +7,9 @@ from app.models.countries import Country
 
 
 class Product(models.Model):
-    url = models.TextField('URL')
+    url = models.TextField('URL', blank=False)
     # image = models.CharField('Image URL', max_length=255)
-    current_price = models.CharField('Current Price', max_length=50)
+    current_price = models.CharField('Current Price', max_length=50, default='0')
     enable = models.BooleanField('Enable', default=True)
     issue_report = models.BooleanField('Issue Report', default=False)
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
