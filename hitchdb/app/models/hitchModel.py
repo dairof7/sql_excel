@@ -4,11 +4,11 @@ from app.models.subCategories import SubCategory
 
 class HitchModel(models.Model):
     model = models.CharField('Hitch Model', max_length=50, primary_key=True)
-    name = models.CharField('Name', max_length=250)
-    segment = models.CharField('Segment', max_length=100)
+    name = models.CharField('Name', max_length=250, blank=False)
+    segment = models.CharField('Segment', max_length=100, blank=False)
     image = models.TextField('URL Image')
     # image = models.ImageField('Image', upload_to=None, blank=True, null=True)
-    brand = models.CharField('Brand', max_length=250)
+    brand = models.CharField('Brand', max_length=250, blank=False)
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
     sub_category = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
@@ -19,4 +19,4 @@ class HitchModel(models.Model):
         verbose_name_plural = 'Hitch Models'
     
     def __str__(self):
-        return str(self.segment) + ' - ' + str(self.brand)
+        return str(self.model) + ' - ' + str(self.brand)

@@ -3,7 +3,7 @@ from app.models.product import Product
 
 
 class HistoryPrice(models.Model):
-    price = models.CharField('Price', max_length=150)
+    price = models.CharField('Price', max_length=150, default='0')
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)

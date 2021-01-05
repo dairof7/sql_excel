@@ -3,8 +3,8 @@ from app.models.countries import Country
 
 
 class Retailer(models.Model):
-    retailer = models.CharField('Retailer', max_length=150)
-    image = models.TextField('URL Image')
+    retailer = models.CharField('Retailer', max_length=150, unique=True, blank=False)
+    image = models.TextField('URL Image', blank=True, null=True)
     # image = models.ImageField('Image', upload_to=None, blank=True, null=True)
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
     created = models.DateField(auto_now_add=True)

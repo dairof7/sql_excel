@@ -13,7 +13,7 @@ class Report(models.Model):
 
     status = models.IntegerField(default=1)
     report_type = models.CharField('Report Type', max_length=1, choices=report_list)
-    comment = models.TextField('Comment')
+    comment = models.TextField('Comment', blank=True, null=True)
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
     

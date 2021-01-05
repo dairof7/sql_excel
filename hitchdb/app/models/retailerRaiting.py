@@ -13,7 +13,7 @@ class RetailerRaiting(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     retailer = models.ForeignKey(Retailer, on_delete=models.CASCADE)
     raiting = models.CharField('Raiting', max_length=1, choices=raiting_list)
-    comment = models.TextField('Comment')
+    comment = models.TextField('Comment', blank=True, null=True)
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
     
