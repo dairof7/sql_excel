@@ -19,4 +19,4 @@ class HitchModel(models.Model):
         verbose_name_plural = 'Hitch Models'
     
     def __str__(self):
-        return str(self.segment) + ' - ' + str(self.brand)
+        return str(self.model) + ' - ' + str(self.brand)
